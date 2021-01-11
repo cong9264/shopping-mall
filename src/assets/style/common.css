@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+}
+
+.flex-bet {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-ctr {
+  display: flex;
+  align-content: center;
+}
+
+.flex-bet-ctr {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
