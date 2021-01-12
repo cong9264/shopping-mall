@@ -1,7 +1,7 @@
 <template>
-  <div class="tab-bar-item" @click="toPage(item.path)">
-    <i :class="[item.icon, 'iconfont']" :style="{color: activeColor}"></i>
-    <h2 class="title" :style="{color: activeColor}">{{item.title}}</h2>
+  <div class="tab-bar-item" @click="toPage(item)">
+    <i :class="[item.icon, 'iconfont']"></i>
+    <h2 class="title">{{item.title}}</h2>
   </div>
 </template>
 
@@ -14,19 +14,26 @@
         required: true
       }
     },
+    data () {
+      return {
+      }
+    },
     computed: {
-      routeActive () {
-        return this.$router.currentRoute.fullPath === this.item.path;
-      },
+      // routeActive () {
+      //   // return this.$router.currentRoute.fullPath === this.item.path;
+      //   // return this.$router.currentRoute.fullPath.indexOf(this.item.path) !== -1;
+      //   // return this.$router.currentRoute.fullPath.indexOf(this.$route.path) !== -1;
+      //   return this.pa
+      // },
       activeColor () {
-        return this.routeActive && 'pink';
+        return this.item.active && 'pink';
       }
     },
     methods: {
-      toPage (path) {
-        this.$router.push(path).catch(err => err);
+      toPage (item) {
+        this.$router.push(item.path).catch(err => err);
       }
-    },
+    }
   }
 </script>
 

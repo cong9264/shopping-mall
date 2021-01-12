@@ -1,15 +1,20 @@
 <template>
   <div class="tab-bar">
-    <tab-bar-item v-for="(item, index) in tabBarList" :key="index" :item="item">
+    <tab-bar-item
+      v-for="(item, index) in tabBarList"
+      :key="index"
+      :item="item"
+    >
     </tab-bar-item>
   </div>
 </template>
 
 <script>
+  import TabBarItem from "./TabBarItem";
   export default {
     name: "TabBar.vue",
     components: {
-      TabBarItem: require('./TabBarItem').default
+      TabBarItem
     },
     props: {
       tabBarList: {

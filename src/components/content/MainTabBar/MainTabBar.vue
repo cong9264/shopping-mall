@@ -3,10 +3,11 @@
 </template>
 
 <script>
+  import TabBar from "../../common/TabBar/TabBar";
   export default {
     name: "MainTabBar",
     components: {
-      TabBar: require('components/common/TabBar/TabBar').default
+      TabBar
     },
     computed: {
       tabBarList () {
@@ -16,9 +17,11 @@
           temp.push({
             path: item.path,
             title: item.meta.title,
-            icon: item.meta.icon
+            icon: item.meta.icon,
+            active: false
           });
         });
+        temp[0].active = true;
         return temp;
       }
     }
